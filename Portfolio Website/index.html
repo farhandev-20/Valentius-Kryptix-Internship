@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farhan Attar | Computer Engineering Student & Aspiring Software Developer</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Personal portfolio of Farhan Attar - Computer Engineering Student and Aspiring Software Developer specializing in Python, Web Development, AI/ML, and Database Systems.">
+  <meta name="keywords" content="Farhan Attar, Software Developer, Computer Engineering, Python, Machine Learning, Web Development, Portfolio">
+  <meta name="author" content="Farhan Attar">
+  <meta name="theme-color" content="#0a0f1d">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Farhan Attar | Portfolio">
+  <meta property="og:description" content="Computer Engineering Student | Aspiring Software Developer passionate about practical, high-impact software systems.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. STICKY HEADER & NAVIGATION
+       ======================================================================== -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <a href="#home" class="logo" aria-label="Farhan Attar Home">
+        <span class="logo-badge">FA</span>
+        <span class="logo-text">Farhan Attar</span>
+      </a>
+
+      <!-- Desktop & Mobile Nav Menu -->
+      <nav id="nav-menu" class="nav-menu" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Theme Switcher & Mobile Menu Trigger -->
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark and light theme" title="Toggle Theme">
+          <!-- Sun Icon (for light mode) -->
+          <svg class="sun-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <!-- Moon Icon (for dark mode) -->
+          <svg class="moon-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+
+        <button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open mobile navigation menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================================================================
+         2. HERO / INTRO SECTION
+         ======================================================================== -->
+    <section id="home" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span>Available for Internships & Projects</span>
+          </div>
+
+          <h1 class="hero-name">
+            Hi, I'm <span class="gradient-text">Farhan Attar</span>
+          </h1>
+
+          <p class="hero-title">
+            Computer Engineering Student | Aspiring Software Developer
+          </p>
+
+          <p class="hero-intro">
+            Passionate about building scalable web applications, intelligent AI/ML solutions, and data-driven systems that solve real-world problems.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <span>View Projects</span>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Contact Me</span>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="hero-social-links">
+            <a href="https://github.com/farhandev-20" target="_blank" rel="noopener noreferrer" class="social-link-btn" aria-label="GitHub Profile" title="GitHub">
+              <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/farhan-attar" target="_blank" rel="noopener noreferrer" class="social-link-btn" aria-label="LinkedIn Profile" title="LinkedIn">
+              <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+              </svg>
+            </a>
+            <a href="mailto:farhan.attar.dev@gmail.com" class="social-link-btn" aria-label="Send Email" title="Email">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="avatar-card">
+            <img src="assets/images/profile.svg" alt="Farhan Attar - Developer Portrait Placeholder" id="profile-img" width="380" height="380">
+          </div>
+          <!-- Floating Status Badges -->
+          <div class="floating-badge badge-top">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+            <span>Full-Stack & ML</span>
+          </div>
+          <div class="floating-badge badge-bottom">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Problem Solver</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         3. ABOUT SECTION
+         ======================================================================== -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Overview</div>
+          <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+          <p class="section-subtitle">A glimpse into my background, technical focus, and passion for engineering impactful software.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Bio Text -->
+          <div class="about-text-card glass-card reveal">
+            <p class="about-lead">
+              I am a <strong>B.Tech Computer Engineering student</strong> driven by a strong passion for software development, applied artificial intelligence, and scalable web technologies.
+            </p>
+            <p class="about-description">
+              My technical expertise spans <strong>Python</strong>, modern <strong>web development</strong> (HTML, CSS, JavaScript, React), <strong>AI/Machine Learning</strong>, and robust <strong>relational databases</strong>. I enjoy turning complex computational ideas into clean, functional, and user-friendly digital products.
+            </p>
+            <p class="about-description">
+              With a relentless focus on building practical, real-world applications, I constantly explore modern architectural patterns, machine learning workflows, and responsive frontend design to deliver end-to-end value.
+            </p>
+          </div>
+
+          <!-- Highlight Cards -->
+          <div class="about-highlights-grid reveal">
+            <div class="highlight-card glass-card">
+              <div class="highlight-icon">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                </svg>
+              </div>
+              <h3 class="highlight-title">Academic Background</h3>
+              <p class="highlight-desc">B.Tech in Computer Engineering with strong foundations in Data Structures, Algorithms, and System Design.</p>
+            </div>
+
+            <div class="highlight-card glass-card">
+              <div class="highlight-icon">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <h3 class="highlight-title">Software Engineering</h3>
+              <p class="highlight-desc">Developing responsive, performant full-stack web applications with clean code principles.</p>
+            </div>
+
+            <div class="highlight-card glass-card">
+              <div class="highlight-icon">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 class="highlight-title">AI & Data Analytics</h3>
+              <p class="highlight-desc">Building machine learning models and data visualization pipelines for actionable insights.</p>
+            </div>
+
+            <div class="highlight-card glass-card">
+              <div class="highlight-icon">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 class="highlight-title">Real-World Focus</h3>
+              <p class="highlight-desc">Focused on creating production-ready applications with seamless UX and reliable architecture.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         4. SKILLS SECTION
+         ======================================================================== -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Technical Toolkit</div>
+          <h2 class="section-title">Skills & <span class="gradient-text">Technologies</span></h2>
+          <p class="section-subtitle">Core programming languages, frameworks, developer tools, and machine learning competencies.</p>
+        </div>
+
+        <div class="skills-grid reveal">
+          <!-- Skill 1: Python -->
+          <div class="skill-card glass-card">
+            <div class="skill-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm0-4H9V7h2v5zm4 4h-2v-2h2v2zm0-4h-2V7h2v5z" fill="url(#pGrad)" />
+                <defs>
+                  <linearGradient id="pGrad" x1="0" y1="0" x2="24" y2="24">
+                    <stop offset="0%" stop-color="#38bdf8"/>
+                    <stop offset="100%" stop-color="#facc15"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <h3 class="skill-name">Python</h3>
+            <span class="skill-category">Core Language / AI</span>
+          </div>
+
+          <!-- Skill 2: HTML -->
+          <div class="skill-card glass-card">
+            <div class="skill-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 3l1.5 17L12 22l6.5-2L20 3H4z" stroke="#f97316"/>
+                <path d="M16.5 7.5H7.5l.5 5h8l-.5 4.5-3.5 1-3.5-1-.2-2" stroke="#f97316"/>
+              </svg>
+            </div>
+            <h3 class="skill-name">HTML</h3>
+            <span class="skill-category">Semantic Markup</span>
+          </div>
+
+          <!-- Skill 3: CSS -->
+          <div class="skill-card glass-card">
+            <div class="skill-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 3l1.5 17L12 22l6.5-2L20 3H4z" stroke="#38bdf8"/>
+                <path d="M16.5 7.5H7.5l.5 5h8l-.5 4.5-3.5 1-3.5-1-.2-2" stroke="#38bdf8"/>
+              </svg>
+            </div>
+            <h3 class="skill-name">CSS</h3>
+            <span class="skill-category">Styling & Grid/Flex</span>
+          </div>
+
+          <!-- Skill 4: JavaScript -->
+          <div class="skill-card glass-card">
+            <div class="skill-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="4" />
+                <path d="M8 15c0 1.5.5 2 2 2s2-.5 2-2v-5" />
+                <path d="M14 15c.5 1 1.5 1.5 2.5 1.5 1.5 0 2-.8 2-1.8 0-2-3-1.7-3-3.2 0-.8.7-1.5 2-1.5 1 0 1.8.5 2.2 1.2" />
+              </svg>
+            </div>
+            <h3 class="skill-name">JavaScript</h3>
+            <span class="skill-category">ES6+ / Async Logic</span>
+          </div>
+
+          <!-- Skill 5: React -->
+          <div class="skill-card glass-card">
+            <div class="skill-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="1.75">
+                <ellipse cx="12" cy="12" rx="4" ry="10" transform="rotate(30 12 12)"/>
+                <ellipse cx="12" cy="12" rx="4" ry="10" transform="rotate(90 12 12)"/>
+                <ellipse cx="12" cy="12" rx="4" ry="10" transform="rotate(150 12 12)"/>
+                <circle cx="12" cy="12" r="1.5" fill="#06b6d4"/>
+              </svg>
+            </div>
+            <h3 class="skill-name">React</h3>
+            <span class="skill-category">Frontend Library</span>
+          </div>
+
+          <!-- Skill 6: SQL / MySQL -->
+          <div class="skill-card glass-card">
+            <div class="skill-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+              </svg>
+            </div>
+            <h3 class="skill-name">SQL / MySQL</h3>
+            <span class="skill-category">Database Systems</span>
+          </div>
+
+          <!-- Skill 7: Git & GitHub -->
+          <div class="skill-card glass-card">
+            <div class="skill-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="18" cy="18" r="3"/>
+                <circle cx="6" cy="6" r="3"/>
+                <circle cx="6" cy="18" r="3"/>
+                <path d="M18 15V9a3 3 0 00-3-3H9"/>
+                <path d="M6 9v6"/>
+              </svg>
+            </div>
+            <h3 class="skill-name">Git & GitHub</h3>
+            <span class="skill-category">Version Control</span>
+          </div>
+
+          <!-- Skill 8: Machine Learning -->
+          <div class="skill-card glass-card">
+            <div class="skill-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a8 8 0 00-8 8c0 3.37 2.09 6.25 5.04 7.42L9 22h6l-.04-4.58C17.91 16.25 20 13.37 20 10a8 8 0 00-8-8z"/>
+                <path d="M9 10h6"/>
+                <path d="M12 7v6"/>
+              </svg>
+            </div>
+            <h3 class="skill-name">Machine Learning</h3>
+            <span class="skill-category">AI / Scikit-Learn</span>
+          </div>
+
+          <!-- Skill 9: UI/UX -->
+          <div class="skill-card glass-card">
+            <div class="skill-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                <path d="M2 2l7.586 7.586"/>
+                <circle cx="11" cy="11" r="2"/>
+              </svg>
+            </div>
+            <h3 class="skill-name">UI/UX</h3>
+            <span class="skill-category">Design & Wireframing</span>
+          </div>
+
+          <!-- Skill 10: REST APIs -->
+          <div class="skill-card glass-card">
+            <div class="skill-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="4" />
+                <path d="M7 12h10" />
+                <path d="M14 9l3 3-3 3" />
+                <path d="M10 15l-3-3 3-3" />
+              </svg>
+            </div>
+            <h3 class="skill-name">REST APIs</h3>
+            <span class="skill-category">Integration & Backend</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         5. PROJECTS SECTION
+         ======================================================================== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Portfolio Work</div>
+          <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+          <p class="section-subtitle">Real-world applications showcasing full-stack engineering, data analytics, and machine learning.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- PROJECT 1: InterviewAI -->
+          <article class="project-card glass-card reveal">
+            <div class="project-image-wrap">
+              <img src="assets/images/interviewai.svg" alt="InterviewAI Application Interface Preview" width="600" height="340" loading="lazy">
+              <span class="project-badge">Live Application</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">InterviewAI</h3>
+              <p class="project-description">
+                An AI-powered interview preparation application that helps users practice technical and behavioral interviews, delivering real-time intelligent feedback to boost readiness and confidence.
+              </p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Python/AI</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://interviewai-ulkr.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <span>Live Demo</span>
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+                <a href="https://github.com/farhandev-20/InterviewAI" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <span>GitHub</span>
+                  <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: Mutual Fund Analytics -->
+          <article class="project-card glass-card reveal">
+            <div class="project-image-wrap">
+              <img src="assets/images/mutualfund.svg" alt="Mutual Fund Analytics Dashboard Preview" width="600" height="340" loading="lazy">
+              <span class="project-badge">Data Analytics</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Mutual Fund Analytics</h3>
+              <p class="project-description">
+                A financial analytics system for analyzing mutual fund performance, risk metrics (Sharpe ratio, alpha/beta), and historical returns with dynamic visualization dashboards.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Power BI</span>
+                <span class="tag">Data Analytics</span>
+              </div>
+              <div class="project-actions">
+                <a href="#projects" class="btn btn-primary btn-sm demo-placeholder-btn" data-project="Mutual Fund Analytics">
+                  <span>Live Demo</span>
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+                <a href="https://github.com/farhandev-20" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <span>GitHub</span>
+                  <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: Credit Card Fraud Detection -->
+          <article class="project-card glass-card reveal">
+            <div class="project-image-wrap">
+              <img src="assets/images/fraud-detect.svg" alt="Credit Card Fraud Detection Machine Learning Model Preview" width="600" height="340" loading="lazy">
+              <span class="project-badge">Machine Learning</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Credit Card Fraud Detection</h3>
+              <p class="project-description">
+                A predictive machine learning classifier designed to detect fraudulent credit card transactions in real time with high precision, mitigating imbalanced datasets using advanced techniques.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">Classification</span>
+              </div>
+              <div class="project-actions">
+                <a href="#projects" class="btn btn-primary btn-sm demo-placeholder-btn" data-project="Fraud Detection">
+                  <span>Live Demo</span>
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+                <a href="https://github.com/farhandev-20" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <span>GitHub</span>
+                  <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         6. CONTACT SECTION
+         ======================================================================== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Get In Touch</div>
+          <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+          <p class="section-subtitle">Have an internship opportunity, project collaboration, or question? Feel free to reach out directly.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Direct Details Card -->
+          <div class="contact-info-card glass-card reveal">
+            <div>
+              <h3 class="contact-info-title">Contact Details</h3>
+              <p class="contact-info-text">
+                I am actively seeking internship opportunities and entry-level software engineering roles. Let's discuss how I can contribute to your team.
+              </p>
+            </div>
+
+            <div class="contact-direct-list">
+              <!-- Email Item with Copy Button -->
+              <div class="contact-direct-item">
+                <div class="direct-meta">
+                  <div class="direct-icon">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="direct-label">Email Address</div>
+                    <div class="direct-val" id="email-text">farhan.attar.dev@gmail.com</div>
+                  </div>
+                </div>
+                <button type="button" class="copy-btn" id="copy-email-btn" title="Copy email address" aria-label="Copy email address">
+                  <svg id="copy-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="contact-socials">
+              <a href="https://github.com/farhandev-20" target="_blank" rel="noopener noreferrer" class="contact-social-btn">
+                <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                </svg>
+                <span>GitHub Profile: farhandev-20</span>
+              </a>
+
+              <a href="https://linkedin.com/in/farhan-attar" target="_blank" rel="noopener noreferrer" class="contact-social-btn">
+                <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                </svg>
+                <span>LinkedIn: Farhan Attar</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Recruiter Contact Form -->
+          <div class="contact-form-card glass-card reveal">
+            <h3 class="form-title">Send a Message</h3>
+            <p class="form-subtitle">Fill out the form below and I will get back to you promptly.</p>
+
+            <form id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="user-name" class="form-label">Your Name</label>
+                <input type="text" id="user-name" name="name" class="form-control" placeholder="Jane Doe" required>
+              </div>
+
+              <div class="form-group">
+                <label for="user-email" class="form-label">Your Email</label>
+                <input type="email" id="user-email" name="email" class="form-control" placeholder="jane@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="user-subject" class="form-label">Subject</label>
+                <input type="text" id="user-subject" name="subject" class="form-control" placeholder="Internship Opportunity / Inquiry" required>
+              </div>
+
+              <div class="form-group">
+                <label for="user-message" class="form-label">Message</label>
+                <textarea id="user-message" name="message" class="form-control" placeholder="Hello Farhan, I'd like to talk about..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <span>Send Message</span>
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       7. FOOTER
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="logo-badge" style="width: 28px; height: 28px; font-size: 0.75rem;">FA</span>
+        <span>Farhan Attar</span>
+        <span>•</span>
+        <span style="color: var(--text-muted);">&copy; <span id="current-year">2026</span> All rights reserved.</span>
+      </div>
+
+      <a href="#home" class="back-to-top" aria-label="Back to top">
+        <span>Back to Top</span>
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Floating Toast Notification -->
+  <div class="toast-container">
+    <div id="toast" class="toast" role="alert" aria-live="polite">
+      <div class="toast-icon">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <span id="toast-message">Action successful!</span>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

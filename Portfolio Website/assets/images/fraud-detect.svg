@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgFraud" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#180d1e" />
+      <stop offset="50%" stop-color="#1a102b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="cardChipGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="creditCardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#312e81" />
+      <stop offset="50%" stop-color="#4c1d95" />
+      <stop offset="100%" stop-color="#701a75" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="340" rx="16" fill="url(#bgFraud)" />
+
+  <!-- Grid Accents -->
+  <g stroke="#374151" stroke-opacity="0.3" stroke-width="1">
+    <line x1="50" y1="0" x2="50" y2="340" />
+    <line x1="150" y1="0" x2="150" y2="340" />
+    <line x1="250" y1="0" x2="250" y2="340" />
+    <line x1="350" y1="0" x2="350" y2="340" />
+    <line x1="450" y1="0" x2="450" y2="340" />
+    <line x1="550" y1="0" x2="550" y2="340" />
+    <line x1="0" y1="70" x2="600" y2="70" />
+    <line x1="0" y1="170" x2="600" y2="170" />
+    <line x1="0" y1="270" x2="600" y2="270" />
+  </g>
+
+  <!-- Ambient Glow -->
+  <circle cx="160" cy="170" r="90" fill="#ec4899" opacity="0.12" filter="blur(30px)" />
+  <circle cx="450" cy="170" r="100" fill="#6366f1" opacity="0.15" filter="blur(30px)" />
+
+  <!-- Main Window -->
+  <rect x="40" y="30" width="520" height="280" rx="12" fill="#0f172a" fill-opacity="0.9" stroke="#334155" stroke-width="1.5" />
+
+  <!-- Window Bar -->
+  <path d="M 40 42 C 40 35.37 45.37 30 52 30 L 548 30 C 554.63 30 560 35.37 560 42 L 560 65 L 40 65 Z" fill="#090d16" />
+  <circle cx="62" cy="48" r="5" fill="#ef4444" />
+  <circle cx="78" cy="48" r="5" fill="#f59e0b" />
+  <circle cx="94" cy="48" r="5" fill="#10b981" />
+  <text x="120" y="52" fill="#e2e8f0" font-family="sans-serif" font-size="11" font-weight="600">ML Fraud Detection Engine • Real-time Anomaly Classification</text>
+
+  <!-- Left Side: Digital Credit Card Graphic with Scanner -->
+  <g transform="translate(60, 85)">
+    <!-- Credit Card Base -->
+    <rect width="210" height="130" rx="10" fill="url(#creditCardGrad)" stroke="#818cf8" stroke-width="1.5" />
+    
+    <!-- Chip -->
+    <rect x="25" y="25" width="30" height="24" rx="4" fill="url(#cardChipGrad)" />
+    <line x1="25" y1="37" x2="55" y2="37" stroke="#78350f" stroke-width="1" />
+    <line x1="40" y1="25" x2="40" y2="49" stroke="#78350f" stroke-width="1" />
+
+    <!-- Wireless Icon -->
+    <path d="M 170 30 A 10 10 0 0 1 170 50" fill="none" stroke="#e2e8f0" stroke-width="2" stroke-linecap="round" />
+    <path d="M 176 25 A 16 16 0 0 1 176 55" fill="none" stroke="#e2e8f0" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Card Number Digits -->
+    <text x="25" y="85" fill="#f8fafc" font-family="'Fira Code', monospace" font-size="13" letter-spacing="2">•••• •••• •••• 9042</text>
+    <text x="25" y="112" fill="#cbd5e1" font-family="sans-serif" font-size="10" font-weight="600">SECURITY VERIFIED</text>
+    
+    <!-- Detection Scan Line Animation -->
+    <line x1="10" y1="65" x2="200" y2="65" stroke="#ec4899" stroke-width="2" opacity="0.85" stroke-dasharray="6 3" />
+  </g>
+
+  <!-- Model Metrics Under Card -->
+  <g transform="translate(60, 230)">
+    <rect width="210" height="60" rx="8" fill="#111827" stroke="#374151" stroke-width="1" />
+    <text x="15" y="25" fill="#94a3b8" font-family="sans-serif" font-size="10">Model: Random Forest / XGBoost</text>
+    <text x="15" y="47" fill="#10b981" font-family="sans-serif" font-size="11" font-weight="bold">ROC-AUC: 0.984 | Precision: 96.2%</text>
+  </g>
+
+  <!-- Right Side: Classification Matrix & Stream -->
+  <g transform="translate(290, 85)">
+    <rect width="250" height="205" rx="8" fill="#111827" stroke="#374151" stroke-width="1" />
+    
+    <!-- Title -->
+    <text x="16" y="24" fill="#e2e8f0" font-family="sans-serif" font-size="11" font-weight="600">Live Transaction Stream & Anomaly Score</text>
+
+    <!-- Row 1: Legitimate -->
+    <rect x="14" y="38" width="222" height="42" rx="6" fill="#1e293b" />
+    <circle cx="30" cy="59" r="6" fill="#10b981" />
+    <text x="46" y="55" fill="#f1f5f9" font-family="sans-serif" font-size="10" font-weight="600">TXN #88392 - $42.50</text>
+    <text x="46" y="69" fill="#94a3b8" font-family="sans-serif" font-size="9">Grocery Store • NYC, US</text>
+    <rect x="170" y="48" width="56" height="20" rx="10" fill="#064e3b" />
+    <text x="198" y="62" fill="#6ee7b7" font-family="sans-serif" font-size="9" font-weight="bold" text-anchor="middle">LEGIT (0.02)</text>
+
+    <!-- Row 2: Flagged Fraud -->
+    <rect x="14" y="88" width="222" height="48" rx="6" fill="#450a0a" stroke="#ef4444" stroke-width="1" />
+    <circle cx="30" cy="112" r="6" fill="#ef4444" />
+    <text x="46" y="106" fill="#fecaca" font-family="sans-serif" font-size="10" font-weight="bold">TXN #88393 - $3,890.00</text>
+    <text x="46" y="122" fill="#f87171" font-family="sans-serif" font-size="9">High-Risk IP • Location Mismatch</text>
+    <rect x="165" y="98" width="62" height="20" rx="10" fill="#7f1d1d" />
+    <text x="196" y="112" fill="#fca5a5" font-family="sans-serif" font-size="9" font-weight="bold" text-anchor="middle">FRAUD (0.97)</text>
+
+    <!-- Row 3: Legitimate -->
+    <rect x="14" y="144" width="222" height="42" rx="6" fill="#1e293b" />
+    <circle cx="30" cy="165" r="6" fill="#10b981" />
+    <text x="46" y="161" fill="#f1f5f9" font-family="sans-serif" font-size="10" font-weight="600">TXN #88394 - $18.99</text>
+    <text x="46" y="175" fill="#94a3b8" font-family="sans-serif" font-size="9">Subscription • Netflix</text>
+    <rect x="170" y="154" width="56" height="20" rx="10" fill="#064e3b" />
+    <text x="198" y="168" fill="#6ee7b7" font-family="sans-serif" font-size="9" font-weight="bold" text-anchor="middle">LEGIT (0.01)</text>
+  </g>
+</svg>

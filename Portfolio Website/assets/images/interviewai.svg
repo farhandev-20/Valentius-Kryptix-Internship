@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgInterview" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#141a29" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+    <linearGradient id="primaryAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+    <linearGradient id="cyanAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="340" rx="16" fill="url(#bgInterview)" />
+  
+  <!-- Subtle Background Grid -->
+  <g stroke="#334155" stroke-opacity="0.25" stroke-width="1">
+    <line x1="0" y1="60" x2="600" y2="60" />
+    <line x1="0" y1="120" x2="600" y2="120" />
+    <line x1="0" y1="180" x2="600" y2="180" />
+    <line x1="0" y1="240" x2="600" y2="240" />
+    <line x1="0" y1="300" x2="600" y2="300" />
+    <line x1="100" y1="0" x2="100" y2="340" />
+    <line x1="200" y1="0" x2="200" y2="340" />
+    <line x1="300" y1="0" x2="300" y2="340" />
+    <line x1="400" y1="0" x2="400" y2="340" />
+    <line x1="500" y1="0" x2="500" y2="340" />
+  </g>
+
+  <!-- Glowing Orb -->
+  <circle cx="500" cy="80" r="90" fill="#6366f1" opacity="0.15" filter="blur(30px)" />
+  <circle cx="100" cy="260" r="80" fill="#06b6d4" opacity="0.12" filter="blur(30px)" />
+
+  <!-- App Window Container -->
+  <rect x="40" y="30" width="520" height="280" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5" />
+  
+  <!-- Window Header Bar -->
+  <path d="M 40 42 C 40 35.37 45.37 30 52 30 L 548 30 C 554.63 30 560 35.37 560 42 L 560 65 L 40 65 Z" fill="#0f172a" />
+  <circle cx="62" cy="48" r="5" fill="#ef4444" />
+  <circle cx="78" cy="48" r="5" fill="#f59e0b" />
+  <circle cx="94" cy="48" r="5" fill="#10b981" />
+  <rect x="130" y="40" width="220" height="16" rx="4" fill="#1e293b" />
+  <text x="140" y="52" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10">https://interviewai-ulkr.onrender.com</text>
+
+  <!-- App Content UI -->
+  <!-- Left Side: Chat / Question Area -->
+  <rect x="60" y="85" width="280" height="70" rx="8" fill="#111827" stroke="#374151" stroke-width="1" />
+  <circle cx="85" cy="115" r="14" fill="#4f46e5" />
+  <text x="85" y="119" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">AI</text>
+  <rect x="110" y="102" width="210" height="8" rx="3" fill="#cbd5e1" />
+  <rect x="110" y="118" width="160" height="8" rx="3" fill="#64748b" />
+
+  <!-- User Response Box -->
+  <rect x="100" y="170" width="240" height="60" rx="8" fill="#1e1b4b" stroke="#6366f1" stroke-width="1" stroke-opacity="0.6" />
+  <rect x="115" y="185" width="190" height="8" rx="3" fill="#a5b4fc" />
+  <rect x="115" y="200" width="130" height="8" rx="3" fill="#818cf8" />
+
+  <!-- Right Side: AI Analytics / Score Cards -->
+  <rect x="360" y="85" width="180" height="95" rx="8" fill="#111827" stroke="#374151" stroke-width="1" />
+  <text x="375" y="107" fill="#94a3b8" font-family="sans-serif" font-size="11" font-weight="600">AI Feedback Score</text>
+  <text x="375" y="145" fill="#10b981" font-family="sans-serif" font-size="28" font-weight="bold">92%</text>
+  <rect x="445" y="125" width="80" height="6" rx="3" fill="#1e293b" />
+  <rect x="445" y="125" width="70" height="6" rx="3" fill="#10b981" />
+  <text x="375" y="166" fill="#38bdf8" font-family="sans-serif" font-size="10">Excellent Clarity & Depth</text>
+
+  <!-- Live Audio Wave Simulation -->
+  <g fill="#6366f1">
+    <rect x="65" y="260" width="4" height="20" rx="2" fill="#6366f1" />
+    <rect x="73" y="252" width="4" height="34" rx="2" fill="#818cf8" />
+    <rect x="81" y="245" width="4" height="46" rx="2" fill="#a855f7" />
+    <rect x="89" y="255" width="4" height="28" rx="2" fill="#6366f1" />
+    <rect x="97" y="262" width="4" height="16" rx="2" fill="#4f46e5" />
+    <text x="115" y="272" fill="#94a3b8" font-family="sans-serif" font-size="11">Voice Processing Active...</text>
+  </g>
+
+  <!-- AI Badges on Bottom Right -->
+  <rect x="360" y="195" width="180" height="85" rx="8" fill="#111827" stroke="#374151" stroke-width="1" />
+  <text x="375" y="218" fill="#cbd5e1" font-family="sans-serif" font-size="11" font-weight="600">Real-time Evaluation</text>
+  <rect x="375" y="232" width="60" height="18" rx="9" fill="#312e81" />
+  <text x="405" y="244" fill="#c7d2fe" font-family="sans-serif" font-size="9" text-anchor="middle">Python</text>
+  <rect x="442" y="232" width="45" height="18" rx="9" fill="#064e3b" />
+  <text x="464" y="244" fill="#a7f3d0" font-family="sans-serif" font-size="9" text-anchor="middle">NLP</text>
+  <rect x="493" y="232" width="38" height="18" rx="9" fill="#1e3a8a" />
+  <text x="512" y="244" fill="#bae6fd" font-family="sans-serif" font-size="9" text-anchor="middle">JS</text>
+</svg>

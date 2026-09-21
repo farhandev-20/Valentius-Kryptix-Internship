@@ -1,0 +1,459 @@
+{
+	"info": {
+		"_postman_id": "7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+		"name": "Task Management REST API - Valentius Kryptix",
+		"description": "Production-ready REST API Postman Collection covering User Authentication (JWT) and Full CRUD operations on Tasks resource.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		},
+		{
+			"key": "accessToken",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "refreshToken",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "taskId",
+			"value": "1",
+			"type": "string"
+		}
+	],
+	"item": [
+		{
+			"name": "0. API Overview",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/",
+					"host": ["{{baseUrl}}"],
+					"path": [""]
+				},
+				"description": "Get API status and overview of available endpoints."
+			},
+			"response": []
+		},
+		{
+			"name": "1. Authentication",
+			"item": [
+				{
+					"name": "Register User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"if (jsonData.tokens && jsonData.tokens.access) {",
+									"    pm.collectionVariables.set('accessToken', jsonData.tokens.access);",
+									"    pm.collectionVariables.set('refreshToken', jsonData.tokens.refresh);",
+									"    console.log('Access token updated from registration.');",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"farhan_dev\",\n    \"email\": \"farhan@example.com\",\n    \"password\": \"SecurePass123!\",\n    \"password_confirm\": \"SecurePass123!\",\n    \"first_name\": \"Farhan\",\n    \"last_name\": \"Khan\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/register/",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "auth", "register", ""]
+						},
+						"description": "Registers a new user and returns JWT access & refresh tokens."
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"if (jsonData.tokens && jsonData.tokens.access) {",
+									"    pm.collectionVariables.set('accessToken', jsonData.tokens.access);",
+									"    pm.collectionVariables.set('refreshToken', jsonData.tokens.refresh);",
+									"    console.log('Access token updated from login.');",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"farhan_dev\",\n    \"password\": \"SecurePass123!\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/login/",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "auth", "login", ""]
+						},
+						"description": "Logs in user using username or email and returns JWT tokens."
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Access Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"if (jsonData.access) {",
+									"    pm.collectionVariables.set('accessToken', jsonData.access);",
+									"    console.log('Access token refreshed.');",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refresh\": \"{{refreshToken}}\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/refresh/",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "auth", "refresh", ""]
+						},
+						"description": "Obtain a fresh access token using the refresh token."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current User Profile (Protected)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/me/",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "auth", "me", ""]
+						},
+						"description": "Returns current authenticated user details."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2. Tasks CRUD",
+			"item": [
+				{
+					"name": "1. Create Task (POST)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"if (jsonData.data && jsonData.data.id) {",
+									"    pm.collectionVariables.set('taskId', jsonData.data.id);",
+									"    console.log('taskId variable set to: ' + jsonData.data.id);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Design Database Schema\",\n    \"description\": \"Draft ER diagram and define model relations for ecommerce API.\",\n    \"status\": \"IN_PROGRESS\",\n    \"priority\": \"HIGH\",\n    \"due_date\": \"2026-10-15\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/tasks/",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "tasks", ""]
+						},
+						"description": "Creates a new task associated with the logged-in user."
+					},
+					"response": []
+				},
+				{
+					"name": "2. List All User Tasks (GET)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/tasks/",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "tasks", ""]
+						},
+						"description": "Lists all tasks belonging to the authenticated user."
+					},
+					"response": []
+				},
+				{
+					"name": "3. Filter Tasks by Status (GET)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/tasks/?status=IN_PROGRESS",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "tasks", ""],
+							"query": [
+								{
+									"key": "status",
+									"value": "IN_PROGRESS"
+								}
+							]
+						},
+						"description": "Filters tasks by status (TODO, IN_PROGRESS, COMPLETED)."
+					},
+					"response": []
+				},
+				{
+					"name": "4. Search Tasks by Keyword (GET)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/tasks/?search=Database",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "tasks", ""],
+							"query": [
+								{
+									"key": "search",
+									"value": "Database"
+								}
+							]
+						},
+						"description": "Searches for tasks matching keywords in title or description."
+					},
+					"response": []
+				},
+				{
+					"name": "5. Retrieve Task by ID (GET)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/tasks/{{taskId}}/",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "tasks", "{{taskId}}", ""]
+						},
+						"description": "Retrieves detail of a specific task."
+					},
+					"response": []
+				},
+				{
+					"name": "6. Full Update Task (PUT)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Design Database Schema (Reviewed)\",\n    \"description\": \"Reviewed with team and finalized schema.\",\n    \"status\": \"COMPLETED\",\n    \"priority\": \"HIGH\",\n    \"due_date\": \"2026-10-15\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/tasks/{{taskId}}/",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "tasks", "{{taskId}}", ""]
+						},
+						"description": "Performs a full update on the task."
+					},
+					"response": []
+				},
+				{
+					"name": "7. Partial Update Task (PATCH)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"COMPLETED\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/tasks/{{taskId}}/",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "tasks", "{{taskId}}", ""]
+						},
+						"description": "Performs a partial update (e.g. changing status only)."
+					},
+					"response": []
+				},
+				{
+					"name": "8. Delete Task (DELETE)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/tasks/{{taskId}}/",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "tasks", "{{taskId}}", ""]
+						},
+						"description": "Deletes the specified task (returns 204 No Content)."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3. Error & Validation Test Cases",
+			"item": [
+				{
+					"name": "Unauthenticated Request (Expect 401)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/tasks/",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "tasks", ""]
+						},
+						"description": "Demonstrates 401 Unauthorized when no JWT token is provided."
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid Input Validation (Expect 400)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"\",\n    \"status\": \"INVALID_STATUS\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/tasks/",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "tasks", ""]
+						},
+						"description": "Demonstrates 400 Bad Request with field validation errors when invalid payload is submitted."
+					},
+					"response": []
+				},
+				{
+					"name": "Resource Not Found (Expect 404)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/tasks/999999/",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "tasks", "999999", ""]
+						},
+						"description": "Demonstrates 404 Not Found when requesting non-existing resource."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
